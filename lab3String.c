@@ -16,8 +16,7 @@ int isAstarBplus(char *str) {
         ;
 
     // Count 'b's (one or more)
- 
-     int j = i;
+    int j = i;
     for ( ; j < len && str[j] == 'b'; j++)
         ;
 
@@ -38,6 +37,9 @@ int main() {
 
     printf("Enter a string: ");
     fgets(input, sizeof(input), stdin);
+
+    // REMOVE newline from fgets
+    input[strcspn(input, "\n")] = '\0';
 
     if (isA(input))
         printf("String '%s' is accepted under pattern 'a'\n", input);
